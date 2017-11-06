@@ -15,6 +15,12 @@ GIT
       sprockets (>= 3.0, < 4.1)
       sprockets-es6 (>= 0.9.2)
 
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: f2db689ba567d1a018f4dacb1ccf909adc93e887
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,7 +70,6 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.1.0)
@@ -251,6 +256,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  bcrypt!
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
