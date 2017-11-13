@@ -1,0 +1,6 @@
+table
+  - @products.each do |product|
+    tr
+      - if product.category_id == @item.to_i
+        td = product.name
+        td = product.description

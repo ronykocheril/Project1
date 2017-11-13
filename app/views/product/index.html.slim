@@ -1,2 +1,3 @@
-h1 Product#index
-p Find me in app/views/product/index.html.slim
+h1 Product
+- @products.each do |product|
+  p = product.name

@@ -9,6 +9,5 @@ table
   tbody
     - @categories.each do |category|
       tr
-        td = category.name
+        td = link_to category.name, show_path(category.id)
         td = category.description
-        
