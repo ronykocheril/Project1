@@ -1,3 +1,26 @@
 // Place all the styles related to the product controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+img{
+  height: 200px;
+  width: 200px;
+}
+
+table{
+  background-color: grey;
+  border: 2px solid;
+}
+
+tr{
+  border: 2px solid;
+}
+
+h3{
+  text-align: center;
+  font-weight: bold;
+  color: WHITE;
+}
+
+h4{
+  color: black;
+}

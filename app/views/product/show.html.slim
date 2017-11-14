@@ -1,6 +1,11 @@
 table
   - @products.each do |product|
+
     tr
       - if product.category_id == @item.to_i
-        td = product.name
-        td = product.description
+        td
+          h3 = product.name
+        td
+          h4 = product.description
+        td
+          p #{image_tag product.image}
