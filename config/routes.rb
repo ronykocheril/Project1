@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
   get 'product/index'
 
   get '/:number', to: 'product#show', as: 'show', number: /\d+/
