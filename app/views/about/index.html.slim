@@ -1,2 +1,6 @@
-h1 About#index
-p Find me in app/views/about/index.html.slim
+h1 About
+
+- @about.each do |about_each|
+  -if about_each.name == "About"
+    div id="about_div"
+      p id="about_p" = about_each.description
