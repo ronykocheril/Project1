@@ -15,6 +15,10 @@ tr{
   border: 2px solid;
 }
 
+h1{
+  text-align: center;
+}
+
 h3{
   text-align: center;
   font-weight: bold;
@@ -24,3 +28,47 @@ h3{
 h4{
   color: black;
 }
+
+form{
+  text-align: center;
+  padding: 20px 20px;
+  margin-top: 30px;
+  margin-left: 20px;
+
+}
+
+button{
+  margin-left: 5px;
+}
+
+form #id{
+  width: 500px;
+}
+
+div{
+  padding-left: 50px;
+  padding-top: 5px;
+  width: 1000px;
+  margin-left: 150px;
+  background: #cccccc;
+  background: -webkit-linear-gradient(#bfbfbf, #cccccc, #e6e6e6); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#bfbfbf, #cccccc, #e6e6e6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#bfbfbf, #cccccc, #e6e6e6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#bfbfbf, #cccccc, #e6e6e6); /* Standard syntax */
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  // border: 0.5px solid;
+}
+
+div p{
+  font-size: 20px;
+}
+
+
+// div h2{
+//   float: left;
+// }
+//
+// div p{
+//   float: left;
+// }

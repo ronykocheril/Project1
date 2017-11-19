@@ -1,13 +1,13 @@
-h1 Categories
+body
+  h1 Categories
 
-table
-  thead
-    tr
-      th Name
-      th Description
+  =form_tag category_search_path, method: 'get' do
+    =text_field_tag :search_item
+    =submit_tag "Search"
 
-  tbody
-    - @categories.each do |category|
-      tr
-        td = link_to category.name, show_path(category.id)
-        td = category.description
+  - @categories.each do |category|
+    div
+      h2 = link_to category.name, show_path(category.id)
+      p = category.description
+  p
+    == paginate @categories
