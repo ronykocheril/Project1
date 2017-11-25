@@ -6,14 +6,14 @@ h1  #{@new_variable} Items
   =hidden_field_tag :category, @item
   =submit_tag "Search"
 
-table
-  - @products.each do |product|
+=form_tag search_path, method: 'get' do
+  =select_tag "search_drop", options_from_collection_for_select(@products, "id", "name")
+  =hidden_field_tag :category, @item
+  =submit_tag "Search"
 
-    tr
-      - if product.category_id == @item.to_i
-        td
-          h3 = product.name
-        td
-          h4 = product.description
-        td
-          p #{image_tag product.image}
+nav id="product_nav_sort"
+  ul
+    li Filter By:
+    li = link_to "New" , sort_path(sort: "New", category_id: @item)
+    li = link_to "Sale", sort_path(sort: "Sale", category_id: @item)
+== render partial: 'display_items'

@@ -1,0 +1,11 @@
+- @products.each do |product|
+  div id="product_div"
+    aside
+      p id="product_name" = product.name
+      p id="product_status" = product.status
+      p id="product_description" = product.description
+    p id="product_image" #{image_tag product.image}
+    p id="product_price"  Price: $#{product.price}
+    br
+    p id="product_qunatity" Stock Left: #{product.stock_quantity}
+    p id="product_add_to_cart" #{link_to 'Add to Cart', add_to_cart_product_path(product), method: :post}
