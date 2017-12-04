@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'cart/index'
 
   get 'about/index'
   get 'about/contact'
@@ -12,7 +11,9 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  post '/cart_display/:id/add_to_cart' => 'cart_display#add_to_cart', as: :add_to_cart_product
+  post '/cart/:id/cart_display' => 'cart#cart_display', as: :cart_display
+  get '/cart/index', to: 'cart#index', as: 'cart_home'
+  get '/cart/:id/delete_item_from_cart', to: 'cart#delete_item_from_cart', as: 'delete_item_from_cart'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

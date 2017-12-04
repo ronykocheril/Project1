@@ -10,6 +10,8 @@ class ProductController < ApplicationController
     @item = params[:number]
     @products = Product.where("category_id = ?", @item)
     @category_name = Category.where("id = ?", @item).first
+
+    
   end
 
   def search_display
@@ -31,8 +33,5 @@ class ProductController < ApplicationController
     @products = Product.where("status LIKE '#{@sort}'").where("category_id = ?", @category)
   end
 
-  def add_to_cart
-    id = params[:id].to_i
-    render text: "Display Something #{id}"
-  end
+
 end
