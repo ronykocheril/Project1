@@ -19,3 +19,6 @@
       / p id="product_add_to_cart" #{link_to 'Add to Cart', cart_display_path(:product product, :quantity @search_drop), method: :post}
 
       p id="form_Add_to_cart" = submit_tag "Add to Cart"
+
+p class="notice" #{notice}
+p class="alert" #{alert}
