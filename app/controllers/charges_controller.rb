@@ -1,10 +1,17 @@
 class ChargesController < ApplicationController
   def new
       @amount = session[:total]
+
   end
 
   def create
     # Amount in cents
+    obj1 = Order.create(:status => "Paid", :pst => 8.0, :gst => 9.0, :hst => 5.6, :user_id => 1, :name => "name")
+    obj1.save
+
+    obj2 = Lineitem.create(:price => 20.0, :quantity => 2, :product_id => 3, :order_id => obj1.id)
+    obj2.save
+
     @amount = session[:total]
 
     customer = Stripe::Customer.create(
@@ -24,8 +31,7 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
 
 
-    obj1 = Order.create(:status => "Paid", :pst => 8.0, :gst => 9.0, :hst => 5.6, :user_id => 1, :name => "name")
-    obj1.save
+
 
   end
 
