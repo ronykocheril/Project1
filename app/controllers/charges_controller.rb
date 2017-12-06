@@ -16,7 +16,7 @@ class ChargesController < ApplicationController
 
     @calc_gst = @total.to_f * @province_details.gst.to_f
     @calc_pst = @total.to_f * @province_details.pst.to_f
-    @calc_hst = @total.to_f * @province_details.hst.to_f
+    
 
     obj1 = Order.create(:status => "Paid", :pst => @calc_pst, :gst => @calc_gst, :hst => @calc_hst, :user_id => @current_user.id, :name => "Order_#{@current_user.id}" )
     obj1.save
