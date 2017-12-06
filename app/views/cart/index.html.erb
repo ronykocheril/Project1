@@ -19,7 +19,7 @@
 <div><p><%= "Subtotal: #{@total}" %></p></div>
 
 
-<h1><%= current_user.inspect %></h1>
+<!-- <h1><%= current_user.inspect %></h1> -->
 <% if user_signed_in? %>
 <%= link_to "Checkout", checkout_path(total: @total) %>
 <% else %>
