@@ -1,0 +1,14 @@
+
+<% @current_user_name = current_user.name %>
+<h1><%= @current_user_name %></h1>
+
+
+<% @province_name = current_user.province.name %>
+<% @gst = current_user.province.pst %>
+<% @gst = current_user.province.gst %>
+<% @hst = current_user.province.hst %>
+<% @tax = (@gst.to_f + @pst.to_f + @hst.to_f) %>
+<% @final_total = (@total.to_f * @tax.to_f) + @total.to_f %>
+<h2><%= "Your final total including taxes is: $#{@final_total}" %></h3>
+  <h4><%= link_to "Proceed To Pay", charges_new_path %> </h4>
+<% session[:total] = @final_total %>

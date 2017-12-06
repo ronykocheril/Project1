@@ -4,14 +4,13 @@ class CartController < ApplicationController
   def index
     @cart_session = session[:c]
     @total = 0
-
-    
   end
 
   def cart_display
     id = params[:id].to_i
 
     quantity = params[:quantity].to_i
+    @quantity = params[:quantity].to_i
 
     if session[:c].any? {|hsh| hsh['id'] == id}
       session[:c].each do |val|
@@ -37,6 +36,11 @@ class CartController < ApplicationController
       end
     end
     redirect_to :action => :index
+  end
+
+  def checkout
+    @total = params[:total]
+
   end
 
   def initialize_session

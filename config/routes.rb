@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'charges/new'
 
   get 'charges/create'
@@ -19,8 +20,9 @@ Rails.application.routes.draw do
   post '/cart/:id/cart_display' => 'cart#cart_display', as: :cart_display
   get '/cart/index', to: 'cart#index', as: 'cart_home'
   get '/cart/:id/delete_item_from_cart', to: 'cart#delete_item_from_cart', as: 'delete_item_from_cart'
+  get '/cart/checkout', to: 'cart#checkout', as: 'checkout'
 
-
+  devise_for :users, skip: :all
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

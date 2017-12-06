@@ -17,3 +17,13 @@
 <% end %>
 
 <div><p><%= "Subtotal: #{@total}" %></p></div>
+
+
+<h1><%= current_user.inspect %></h1>
+<% if user_signed_in? %>
+<%= link_to "Checkout", checkout_path(total: @total) %>
+<% else %>
+<h5>To checkout please log in or signup.</h5>
+<li><%= link_to "Log In", user_session_path %> </li>
+<li><%= link_to "Sign Up", new_user_registration_path %> </li>
+<% end %>

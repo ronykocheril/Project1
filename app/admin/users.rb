@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
 
-  permit_params :name, :password, :province_id
+  permit_params :name, :province_id
 
 end
